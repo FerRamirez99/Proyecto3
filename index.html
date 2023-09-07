@@ -21,7 +21,7 @@
             <nav class="navbar navbar-expand-md">
                 <div class="container">
                     <!--LOGO-->
-                    <a href="#"><img src="./assets/img/logo.png" alt="Logo" class="logo" style="width: 80px;"></a>
+                    <a href="#"><img src="./assets/img/logo.png" alt="Logo" class="logo"></a>
                     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -40,9 +40,12 @@
             </nav>
         </header>
         <section class="data">
-            <div>
-                <canvas id="myChart"></canvas>
-            </div> 
+            <div class="container">
+                <h2>Dashboard</h2>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div> 
+            </div>
         </section>
         <footer>
             <div class="container">
@@ -71,6 +74,6 @@
         <!--SCRIPT BOOTSTRAP-->
         <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!--SCRIPT-->
-        <script src="./js/script.js"></script>
+        <script src="./js/script.js" type="module"></script>
     </body>
 </html>
