@@ -31,9 +31,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Añadir libros</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Bookshelf</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -42,11 +39,45 @@
         <section class="data">
             <div class="container">
                 <h2>Dashboard</h2>
-                <div>
-                    <canvas id="myChart"></canvas>
-                </div> 
+                <div class="row">
+                    <div class="col-4">
+                        <h3>Clima actual</h3>
+                        <!-- <select id="changePlace" onchange="dropdownSelect()">
+                            <option value="">-- Ciudad --</option>
+                            <option value="001">Hairy Woodpecker</option>
+                            <option value="002">Brewer's Sparrow</option>
+                            <option value="003">White-tailed Hawk</option>
+                        </select>
+                        <p id='msg'></p> -->
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title" id="cardTitle"></h5>
+                                <div class="img-container">
+                                    <img src="" class="card-img" alt="Icono clima" id="cardIcon">
+                                </div>
+                                <h3 id="cardTemp"></h3>
+                                <p class="card-text" id="cardEst"></p>
+                                <p class="card-text" id="cardHum"></p>
+                            </div>
+                          </div>
+                        <!-- date picker y t° santiago actual -->
+                    </div>
+                    <div class="col-8">
+                        <h3>Temperatura historica</h3>
+                        <div>
+                            <h5>Temperatura maxima y minima</h5>
+                            <canvas id="myChart"></canvas>
+                        </div> 
+                        <div>
+                            <h5>Temperatura promedio vs Sensación termica</h5>
+                            <canvas id="myChart1"></canvas>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </section>
+
+    
         <footer>
             <div class="container">
                 <div class="row">
