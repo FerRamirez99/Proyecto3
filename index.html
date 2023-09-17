@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--ICONO TAB-->
-        <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico">
+        <link rel="icon" type="image/x-icon" href="./assets/img/logo_1.ico">
         <!--LINKS PARA FONTAWESOME-->
         <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.css">
         <link rel="stylesheet" href="./assets/fontawesome/css/brands.css">
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
         <!--LINK CSS-->
         <link rel="stylesheet" href="./styles.css">
-        <title>Document</title>
+        <title>Temperaturas en Chile</title>
     </head>
     <body>
         <header>
@@ -29,26 +29,62 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Añadir libros</a>
+                                <a class="nav-link" href="#">Temperaturas en Chile</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <section class="data">
+        <section class="main">
             <div class="container">
-                <h2>Dashboard</h2>
+                <h2>Dashboard de Temperatura</h2>
+                <p>En esta página podrás encontrar el clima de hoy en diferentes ciudades de Chile, además de poder revisar el clima de hasta hace 3 meses en Santiago.</p>
                 <div class="row">
-                    <div class="col-4">
-                        <h3>Clima actual</h3>
-                        <!-- <select id="changePlace" onchange="dropdownSelect()">
+                    <div class="col-3">
+                        <h3>Clima de hoy</h3>
+                        <p id="today"></p>
+                        <select id="changePlace">
                             <option value="">-- Ciudad --</option>
-                            <option value="001">Hairy Woodpecker</option>
-                            <option value="002">Brewer's Sparrow</option>
-                            <option value="003">White-tailed Hawk</option>
+                            <option value="0">Antofagasta</option>
+                            <option value="1">Arch. Juan Fernández</option>
+                            <option value="2">Arica</option>
+                            <option value="3">Balmaceda</option>
+                            <option value="4">Calama</option>
+                            <option value="5">Caldera</option>
+                            <option value="6">Chile Chico</option>
+                            <option value="7">Chillán</option>
+                            <option value="8">Cochrane</option>
+                            <option value="9">Concepción</option>
+                            <option value="10">Coyhaique</option>
+                            <option value="11">Curicó</option>
+                            <option value="12">Futaleufú</option>
+                            <option value="13">Iquique</option>
+                            <option value="14">Isla de Pascua</option>
+                            <option value="15">La Serena/Coquimbo</option>
+                            <option value="16">Los Ángeles</option>
+                            <option value="17">Melinka</option>
+                            <option value="18">Osorno</option>
+                            <option value="19">Península Antártica</option>
+                            <option value="20">Porvenir</option>
+                            <option value="21">Puerto Aysén</option>
+                            <option value="22">Puerto Montt</option>
+                            <option value="23">Puerto Natales</option>
+                            <option value="24">Puerto Williams</option>
+                            <option value="25">Punta Arenas</option>
+                            <option value="26">Quellón</option>
+                            <option value="27">Quellón</option>
+                            <option value="28">Rancagua</option>
+                            <option value="29">Rodelillo</option>
+                            <option value="30">San Antonio/Cartagena</option>
+                            <option value="31">Santiago Centro</option>
+                            <option value="32">Santiago Oriente</option>
+                            <option value="33">Santiago Poniente</option>
+                            <option value="34">Temuco</option>
+                            <option value="35">Valdivia</option>
+                            <option value="36">Viña del Mar/Valparaíso</option>
                         </select>
-                        <p id='msg'></p> -->
+                        <button type="button" class="btn btn-primary" id="btn-Select">Ver</button>
                         <div class="card text-center" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title" id="cardTitle"></h5>
@@ -60,24 +96,20 @@
                                 <p class="card-text" id="cardHum"></p>
                             </div>
                           </div>
-                        <!-- date picker y t° santiago actual -->
                     </div>
-                    <div class="col-8">
-                        <h3>Temperatura historica</h3>
+                    <div class="col-9">
+                        <h3>Temperatura histórica</h3>
+                        <p>Escoge hasta que fecha deseas ver los datos y presiona el botón para generar el gráfico.</p>
+                        <input type="date" id="dateStart" name="start" readonly>
+                        <input type="date" id="dateEnd" name="end">
+                        <button type="button" class="btn btn-primary" id="btn-datePicker">Ver Gráfico</button>
                         <div>
-                            <h5>Temperatura maxima y minima</h5>
                             <canvas id="myChart"></canvas>
-                        </div> 
-                        <div>
-                            <h5>Temperatura promedio vs Sensación termica</h5>
-                            <canvas id="myChart1"></canvas>
                         </div> 
                     </div>
                 </div>
             </div>
         </section>
-
-    
         <footer>
             <div class="container">
                 <div class="row">

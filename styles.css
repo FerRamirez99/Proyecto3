@@ -5,11 +5,53 @@ body {
 a {
     color: #8F4B6F;
 }
+.btn-primary {
+    background-color: #ED9E7C;
+    border-color: #ED9E7C;
+    font-size: 14px;
+    margin-top: -5px;
+    border-radius: 3px;
+}
+.btn-primary:hover {
+    background-color: #F7F8F8;
+    border-color: #ED9E7C;
+    color: #ED9E7C;
+}
 .navbar {
     background-color: #ACB9C3;
 }
 .logo {
     height: 50px;
+}
+.main {
+    padding: 30px;
+    text-align: center;
+}
+.row {
+    margin-top: 30px;
+}
+.main h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+.main h3 {
+    font-size: 24px;
+}
+.col-3 {
+    text-align: left;
+}
+.col-3 select {
+    height: 34px;
+}
+.card {
+    margin-top: 40px;
+}
+.col-9 {
+    padding-left: 40px;
+    text-align: left;
+}
+.col-9 input {
+    height: 36px;
 }
 footer {
     background-color: #ACB9C3;
@@ -28,4 +70,3 @@ footer p {
     font-size: 14px;
     margin-top: 15px;
 }
-/*ACB9C3    ED9E7C
