@@ -13,6 +13,34 @@ let senTemp = [];
 let maxTemp = [];
 let minTemp = [];
 
+//Variables card
+let index = 31;
+let temp = [];
+let name = [];
+let hum = [];
+let est = [];
+let icon = [];
+
+async function cardData() {
+    const clima = await fetchApi("https://api.gael.cloud/general/public/clima");
+
+    //Pasar datos a los arrays de las cards
+    temp = clima.map(clima => clima.Temp);
+    name = clima.map(clima => clima.Estacion);
+    hum = clima.map(clima => clima.Humedad);
+    est = clima.map(clima => clima.Estado);
+    icon = clima.map(clima => clima.Icono);
+    console.log(temp);
+
+    //Escribir datos en el card
+    document.getElementById('cardTitle').innerHTML = name[index];
+    document.getElementById('cardTemp').innerHTML = `${temp[index]} °C`;
+    document.getElementById('cardHum').innerHTML = `<i class="fa-solid fa-droplet"></i> ${hum[index]}%`;
+    document.getElementById('cardEst').innerHTML =  est[index];
+    document.getElementById('cardIcon').src = `./assets/img/weather-icons/${icon[index]}`;
+}
+cardData();
+
 async function showData() {
     //Fecha actual
     const currentDate = new Date();
@@ -37,7 +65,6 @@ async function showData() {
     let formattedEnd = endDate.toISOString().split('T')[0];
     
     //Llama al fetch para recoger datos
-    // const clima = await fetchApi("https://api.gael.cloud/general/public/clima");
     const climaGrafico = await fetchApi(`https://archive-api.open-meteo.com/v1/archive?latitude=-33.4569&longitude=-70.6483&start_date=${formattedStart}&end_date=${formattedEnd}&daily=temperature_2m_max,temperature_2m_min,temperature_2m_mean,apparent_temperature_mean&timezone=auto`);
 
     //Pasar datos a los arrays del grafico
@@ -136,5 +163,14 @@ window.addEventListener("load", () => {
     const generateButton = document.getElementById("btn-datePicker");
     generateButton.addEventListener("click", showData);
 });
+
+let elem = document.getElementById('changePlace');
+elem.addEventListener("change", () => {
+    let valor = elem.value;
+    index = valor;
+    const showButton = document.getElementById("btn-Select");
+    showButton.addEventListener("click", cardData);
+    console.log(index);
+})
 
 showData();
