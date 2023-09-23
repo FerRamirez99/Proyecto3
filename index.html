@@ -41,7 +41,7 @@
                 <h2>Dashboard del Clima</h2>
                 <p>En esta página podrás encontrar el clima de hoy en diferentes ciudades de Chile, además de poder revisar el clima de hasta hace 3 meses en Santiago.</p>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-3-sm">
                         <h3>Clima de hoy</h3>
                         <p id="today"></p>
                         <select id="changePlace">
@@ -97,13 +97,13 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-9">
+                    <div class="col-9-sm">
                         <h3>Temperatura histórica en Santiago</h3>
                         <p>Escoge hasta que fecha deseas ver los datos y presiona el botón para generar el gráfico.</p>
                         <input type="date" id="dateStart" name="start" readonly>
                         <input type="date" id="dateEnd" name="end">
                         <button type="button" class="btn btn-primary" id="btn-datePicker">Ver Gráfico</button>
-                        <div>
+                        <div class="chart-container">
                             <canvas id="myChart"></canvas>
                         </div> 
                     </div>

@@ -125,6 +125,7 @@ async function showData() {
                 ],
             },
             options: {
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true,
