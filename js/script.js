@@ -30,7 +30,7 @@ async function cardData() {
     hum = clima.map(clima => clima.Humedad);
     est = clima.map(clima => clima.Estado);
     icon = clima.map(clima => clima.Icono);
-    console.log(temp);
+    //console.log(temp);
 
     //Escribir datos en el card
     document.getElementById('cardTitle').innerHTML = name[index];
@@ -63,7 +63,7 @@ async function showData() {
     //Formatear valores
     let formattedStart = startDate.toISOString().split('T')[0];
     let formattedEnd = endDate.toISOString().split('T')[0];
-    
+
     //Llama al fetch para recoger datos
     const climaGrafico = await fetchApi(`https://archive-api.open-meteo.com/v1/archive?latitude=-33.4569&longitude=-70.6483&start_date=${formattedStart}&end_date=${formattedEnd}&daily=temperature_2m_max,temperature_2m_min,temperature_2m_mean,apparent_temperature_mean&timezone=auto`);
 
@@ -82,7 +82,7 @@ async function showData() {
         chartInstance.data.datasets[0].borderColor = color1;
         chartInstance.update(); // Actualizar el gráfico con los nuevos datos
     } else {
-        const cdx = document.getElementById('myChart');
+        const cdx = document.getElementById('myChart').getContext('2d');
         chartInstance = new Chart(cdx, {
             type: 'line',
             data: {
@@ -125,7 +125,7 @@ async function showData() {
                 ],
             },
             options: {
-                maintainAspectRatio: false,
+                //maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true,
@@ -171,7 +171,6 @@ elem.addEventListener("change", () => {
     index = valor;
     const showButton = document.getElementById("btn-Select");
     showButton.addEventListener("click", cardData);
-    console.log(index);
 })
 
 showData();
